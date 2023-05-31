@@ -1,0 +1,70 @@
+header
+	@include pw
+	display: flex
+	justify-content: space-between
+	align-items: center
+	ul
+		display: flex
+		gap: 2rem
+	a.phone
+		display: flex
+		align-items: center
+		gap: 1rem	
+
+main
+	background-image: url(/assets/img/us.webp)
+	background-repeat: no-repeat
+	//background-position: 
+	height: 620px
+	color: #fff
+	display: flex
+	align-items: center
+	justify-content: center
+	text-align: center
+	h1
+		font-size: 50px
+		font-weight: normal
+
+section.features
+	background-image: url(/assets/img/int.webp)
+	background-repeat: no-repeat
+	.container
+		@include mw
+		padding: 3rem
+		h2
+			font-size: 50px
+			font-weight: normal
+			text-align: center
+			margin-top: 0
+		ul
+			display: grid
+			grid-template-columns: repeat(3, 1fr)
+			justify-items: center
+			align-items: center
+			li
+				font-size: 28px
+				max-width: 250px
+				text-align: center
+				img
+					margin: 1rem auto
+				span
+					display: inline-block
+					min-height: 70px	
+
+section.auctions
+	@include mw
+	padding: 3rem
+	h2
+		font-size: 50px
+		font-weight: normal
+		text-align: center
+		margin-top: 0
+	ul
+		display: grid
+		grid-template-columns: repeat(3, 1fr)
+		justify-items: center
+		align-items: center
+
+footer
+	background-color: #7ba7f9
+	color: #fff
