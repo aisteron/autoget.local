@@ -1,0 +1,24 @@
+main
+	h1 Калькулятор растаможки автомобиля
+	form
+		label
+			span Объем двигателя, см<sup>3</sup> 
+			input(type="number" required placeholder="например, 2000")
+		label
+			span Стоимость автомобиля, €
+			input(type="number" required)
+		.face
+			label
+				input(type="radio" name="face" checked)
+				span Физ. лицо
+			label
+				input(type="radio" name="face")
+				span Юр. лицо
+		label
+			span Год выпуска авто
+			input(type="number" required)
+		.disc
+			label
+				input(type="checkbox")
+				span Льготы 50%: многодетная семья или инвалид I/II группы
+		input(type="submit" value="Рассчитать пошлину")

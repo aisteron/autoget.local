@@ -3,34 +3,156 @@ header
 	display: flex
 	justify-content: space-between
 	align-items: center
+	position: relative
+	@media(max-width:960px)
+		padding: 5px 1rem
+		>a img
+			width: 90px
+			height: 45px
+	@media(max-width:450px)
+		a.phone img
+			display: none		
 	ul
 		display: flex
 		gap: 2rem
+		li.active a
+			color: #99180e
+		@media(max-width:960px)
+			display: none
+			position: absolute
+			background-color: #fff
+			flex-direction: column
+			top: 55px
+			z-index: 2
+			padding: 1rem
+			right: 0
+			&.open
+				display: block
+			li
+				line-height: 200%	
+
 	a.phone
 		display: flex
 		align-items: center
-		gap: 1rem	
-
-main
-	background-image: url(/assets/img/us.webp)
-	background-repeat: no-repeat
-	//background-position: 
-	height: 620px
+		gap: 1rem
+footer
+	background-color: #7ba7f9
 	color: #fff
-	display: flex
-	align-items: center
-	justify-content: center
-	text-align: center
-	h1
-		font-size: 50px
-		font-weight: normal
+	@include pw
+	a
+		color: #fff
+	.row
+		padding-top: 1rem
+		&.nav
+			display: flex
+			gap: 20px
+			align-items: center
+			justify-content: space-between
+			@media(max-width:800px)
+				flex-direction: column
+				ul
+					flex-direction: column
+			ul
+				display: flex
+				gap: 20px
+				justify-content: space-between
+				min-width: 40%
+			a.tel
+				display: flex
+				align-items: center
+				gap: 1rem
+		&.soc
+			text-align: center
+			padding-bottom: 1rem
+			ul
+				display: flex
+				gap: 1rem
+				margin: 1rem auto
+				width: 260px
+				@media(max-width:800px)
+					flex-wrap: wrap
+					width: 90%
 
-section.features
-	background-image: url(/assets/img/int.webp)
-	background-repeat: no-repeat
-	.container
+		p
+			margin: 0
+
+
+body.index-page
+	main
+		background-image: url(/assets/img/us.webp)
+		background-repeat: no-repeat
+		//background-position: 
+		height: 620px
+		color: #fff
+		display: flex
+		align-items: center
+		justify-content: center
+		text-align: center
+		position: relative
+		.container
+			position: relative
+		@media(max-width:520px)
+			&::before 
+				content: ""
+				position: absolute
+				top: 0px
+				right: 0px
+				bottom: 0px
+				left: 0px
+				background-color: rgba(0,0,0,0.25)
+
+		h1
+			font-size: 50px
+			font-weight: normal
+	section.features
+		background-image: url(/assets/img/int.webp)
+		background-repeat: no-repeat
+		background-size: cover
+		.container
+			@include mw
+			padding: 3rem
+			@media(max-width:920px)
+				padding: 2rem 0
+
+			h2
+				font-size: 50px
+				font-weight: normal
+				text-align: center
+				margin-top: 0
+				@media(max-width:520px)
+					font-size: 2rem
+			ul
+				display: grid
+				grid-template-columns: repeat(3, 1fr)
+				justify-items: center
+				align-items: center
+				@media(max-width:800px)
+					grid-template-columns: repeat(2, 1fr)
+				@media(max-width:520px)
+					grid-template-columns: repeat(1,1fr) !important
+					li
+						transform: scale(0.8)	
+				li
+					font-size: 28px
+					max-width: 250px
+					text-align: center
+					img
+						margin: 1rem auto
+					span
+						display: inline-block
+						min-height: 70px	
+	section.auctions
 		@include mw
 		padding: 3rem
+		@media(max-width:700px)	
+			padding: 2rem 0
+			h2
+				font-size: 2rem
+			ul
+				grid-template-columns: repeat(2, 1fr)	
+		@media(max-width:500px)		
+			ul
+				grid-template-columns: repeat(1, 1fr) !important
 		h2
 			font-size: 50px
 			font-weight: normal
@@ -41,30 +163,145 @@ section.features
 			grid-template-columns: repeat(3, 1fr)
 			justify-items: center
 			align-items: center
-			li
-				font-size: 28px
-				max-width: 250px
-				text-align: center
-				img
-					margin: 1rem auto
-				span
-					display: inline-block
-					min-height: 70px	
 
-section.auctions
-	@include mw
-	padding: 3rem
-	h2
-		font-size: 50px
-		font-weight: normal
-		text-align: center
-		margin-top: 0
-	ul
-		display: grid
-		grid-template-columns: repeat(3, 1fr)
-		justify-items: center
-		align-items: center
-
-footer
-	background-color: #7ba7f9
-	color: #fff
+body.order-page
+	main
+		@include pw
+		margin-bottom: 1rem
+		min-height: 80vh
+		h1
+			font-weight: normal
+			font-size: 50px
+		form
+			background-color: #cfdfff
+			padding: 2rem
+			span, input
+				display: block
+			input
+				padding: 12px
+				border-radius: 3px
+				border: 1px solid #7a9adb
+				margin: 1rem
+				margin-left: 0
+				&[type="text"]
+					width: 300px
+				&[type="submit"]	
+					background-color: #91b0ef
+					cursor: pointer
+					&:hover
+						background-color: darken(#91b0ef,5% )
+			textarea
+				width: 300px
+				height: 120px
+				margin-top: 1rem
+				border: 1px solid #7a9adb
+				border-radius: 3px
+				padding: 1rem
+				&::placeholder
+					font-family: "Roboto", sans-serif
+body.calc-page
+	main
+		@include pw
+		margin-bottom: 1rem
+		min-height: 80vh
+		h1
+			font-weight: normal
+			font-size: 50px
+		form
+			background-color: #cfdfff
+			padding: 2rem
+			input
+				&[type="number"]
+					display: block
+					padding: 12px
+					border-radius: 3px
+					border: 1px solid #7a9adb
+					margin: 1rem
+					margin-left: 0
+				&[type="submit"]	
+					background-color: #91b0ef
+					cursor: pointer
+					padding: 12px
+					border-radius: 3px
+					border: 1px solid #7a9adb
+					&:hover
+						background-color: darken(#91b0ef,5% )
+			.face
+				margin: 1rem 0
+				label
+					display: block
+					margin-bottom: 10px
+			.disc
+				margin-bottom: 1rem
+				label
+					input
+						margin-right: 1rem
+body.services-page
+	main
+		@include pw
+		padding-bottom: 1rem !important
+		padding-top: 1rem !important
+		background-image: url(/assets/img/write.webp)
+		background-size: cover
+		min-height: 80vh
+		h1
+			font-weight: normal
+			font-size: 50px
+		.swiper
+			background-color: #cfdfff
+			@media(max-width:420px)	
+				margin: 0 -1rem
+		.swiper-slide
+			.container
+				min-height: 500px
+				display: flex
+				width: 80%
+				margin: 0 auto
+				justify-content: center
+				align-items: center
+				@media(max-width:750px)
+					flex-direction: column
+					align-items: start
+					padding: 2rem 3rem
+					.left
+						margin-right: 0
+						//text-align: center
+						margin-bottom: 1rem
+					ul
+						columns: 1
+						font-size: 14px	
+				.left
+					margin-right: 2rem
+					h3
+						font-size: 28px
+						font-weight: normal
+						&:first-of-type
+							margin-top: 0
+							margin-bottom: 1rem
+							color: #254fa3
+						&:last-of-type
+							margin-bottom: 1rem
+							margin-top: 0
+					a
+						background-color: darken(#cfdfff, 5%)
+						padding: 1rem 1.5rem
+						display: inline-block
+				ul
+					columns: 2
+					li
+						line-height: 180%		
+		p
+			&:last-of-type
+				margin-bottom: 0
+body.about-page
+	main
+		@include pw
+		background-image: url(/assets/img/head.webp)
+		background-size: cover
+		min-height: 80vh
+		padding-top: 1rem !important
+		h1
+			font-weight: normal
+			font-size: 50px
+		p.big
+			font-size: 20px	
