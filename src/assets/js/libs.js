@@ -30,3 +30,30 @@ export async function load_toast(){
 		}
 	})
 }
+
+export async function xml(action, data, path){
+  
+  data && (data = JSON.stringify(data))
+
+
+  return new Promise(resolve => {
+
+		let xhr = new XMLHttpRequest();
+		let body = `action=${action}${data ? `&data=`+data : ""}`
+
+		//process.env.NODE_ENV == 'production' && (cfg.host = '')
+    
+
+
+		xhr.open("POST", path, true);
+		xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+		xhr.onreadystatechange = function () {
+
+			if (this.readyState != 4) return
+			resolve(this.responseText)
+		}
+
+		xhr.send(body);
+	})
+}

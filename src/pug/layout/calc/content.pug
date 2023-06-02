@@ -3,22 +3,22 @@ main
 	form
 		label
 			span Объем двигателя, см<sup>3</sup> 
-			input(type="number" required placeholder="например, 2000")
+			input(type="number" required placeholder="например, 2000" name="volume")
 		label
 			span Стоимость автомобиля, €
-			input(type="number" required)
+			input(type="number" required name="car_price")
 		.face
 			label
-				input(type="radio" name="face" checked)
+				input(type="radio" name="face" checked id="fiz")
 				span Физ. лицо
 			label
-				input(type="radio" name="face")
+				input(type="radio" name="face" id="ur")
 				span Юр. лицо
 		label
 			span Год выпуска авто
-			input(type="number" required)
+			input(type="number" required name="car_year" placeholder="например, 2015")
 		.disc
 			label
-				input(type="checkbox")
+				input(type="checkbox" name="discount")
 				span Льготы 50%: многодетная семья или инвалид I/II группы
 		input(type="submit" value="Рассчитать пошлину")

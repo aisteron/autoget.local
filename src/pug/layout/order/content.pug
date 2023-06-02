@@ -2,9 +2,9 @@ main
 	h1 Оставить заявку на подбор авто
 	form
 		span Контактная информация
-		input(type="text" placeholder="Ф.И.О" required)
-		input(type="text" placeholder="Email" required)
-		input(type="text" placeholder="Телефон" required)
+		input(type="text" placeholder="Ф.И.О" required name="name")
+		input(type="text" placeholder="Email" required name="email")
+		input(type="text" placeholder="Телефон" required name="phone")
 		span Дополнительная информация
-		textarea(placeholder="Опишите автомобиль, который хотели бы приобрести")
+		textarea(placeholder="Опишите автомобиль, который хотели бы приобрести" name="dsc")
 		input(type="submit" value="Отправить")
